@@ -1,0 +1,90 @@
+/* Tata letak dasar halaman */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #2c3e50;
+    overflow: hidden;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.page.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.page:not(.active) {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+/* Gaya untuk tombol LOVE di halaman pertama */
+.container {
+    text-align: center;
+}
+
+.love-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 25px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.love-btn:hover {
+    background-color: #2980b9;
+}
+
+.heart {
+    font-size: 40px;
+    color: #e74c3c;
+    display: block;
+}
+
+.text {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Halaman kedua dengan GIF Tenor dan pesan */
+.message-container {
+    text-align: center;
+    color: white;
+}
+
+.message {
+    font-size: 24px;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: fadeIn 1.5s forwards ease-out 1s;
+}
+
+/* Animasi pesan muncul */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
